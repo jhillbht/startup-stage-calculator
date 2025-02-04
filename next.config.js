@@ -1,10 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  output: 'standalone', // Optimizes for container deployments
+  output: 'standalone',
+  distDir: '.next',
   typescript: {
     ignoreBuildErrors: false
-  }
+  },
+  eslint: {
+    ignoreDuringBuilds: false
+  },
+  experimental: {
+    serverActions: true
+  },
+  poweredByHeader: false
 }
 
 module.exports = nextConfig
