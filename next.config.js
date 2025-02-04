@@ -2,16 +2,13 @@
 const nextConfig = {
   output: 'standalone',
   distDir: '.next',
+  poweredByHeader: false,
   typescript: {
     ignoreBuildErrors: false
   },
   eslint: {
     ignoreDuringBuilds: false
-  },
-  experimental: {
-    serverActions: true
-  },
-  poweredByHeader: false
+  }
 }
 
 module.exports = nextConfig
