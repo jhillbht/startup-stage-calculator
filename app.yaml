@@ -1,0 +1,19 @@
+name: startup-stage-calculator
+region: sfo
+services:
+- build_command: npm run build
+  environment_slug: node-js
+  github:
+    branch: main
+    deploy_on_push: true
+    repo: jhillbht/startup-stage-calculator
+  health_check:
+    http_path: /
+  http_port: 3000
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  name: startup-stage-calculator
+  routes:
+  - path: /
+  run_command: npm start
+  source_dir: /
