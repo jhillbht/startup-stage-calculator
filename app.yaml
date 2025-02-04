@@ -17,3 +17,13 @@ services:
   - path: /
   run_command: npm start
   source_dir: /
+  envs:
+  - key: NEXT_PUBLIC_APP_URL
+    scope: RUN_AND_BUILD_TIME
+    value: ${APP_URL}
+  - key: NEXT_PUBLIC_API_URL
+    scope: RUN_AND_BUILD_TIME
+    value: ${APP_URL}/api
+  - key: NEXT_PUBLIC_DEALS_CSV_URL
+    scope: RUN_AND_BUILD_TIME
+    value: https://raw.githubusercontent.com/jhillbht/startup-stage-calculator/main/data/deals.csv
